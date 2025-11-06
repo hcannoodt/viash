@@ -19,24 +19,21 @@ jobs:
     - name: Set up curl on macOS
       if: runner.os == 'macOS'
       run: |
-        echo "Setting up latest curl on macOS"
-        brew install curl
-        brew link --force curl
-        # Suggested by Dries
-        sudo killall -HUP mDNSResponder
+        brew install wget
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
         # output curl version
-        curl -V
+        # curl -V
 
         # test connection
-        curl -vSL https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
-        curl -vSL https://dl.viash.io | wc
+        # curl -vSL https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
+        # curl -vSL https://dl.viash.io | wc
         
         # Download viash
-        curl -fsSL https://dl.viash.io | bash
+        # curl -fsSL https://dl.viash.io | bash
+        wget -qO- dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
