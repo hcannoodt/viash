@@ -16,16 +16,21 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
+    - name: Set up curl on macOS
+      run: |
+        if [[ "${{ matrix.config.os }}" =~ ^macos.*$ ]]; then
+          brew install curl
+        fi
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
         # test connection
-        curl -vSL --tlsv1.2 https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
-        curl -vSL --tlsv1.2 https://dl.viash.io | wc
+        curl -vSL https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
+        curl -vSL https://dl.viash.io | wc
         
         # Download viash
-        curl -fsSL --tlsv1.2 https://dl.viash.io | bash
+        curl -fsSL https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
