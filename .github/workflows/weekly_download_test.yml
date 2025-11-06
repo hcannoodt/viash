@@ -23,7 +23,7 @@ jobs:
         brew install curl
         brew link --force curl
         # Suggested by Dries
-        killall -HUP mDNSResponder
+        sudo killall -HUP mDNSResponder
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
