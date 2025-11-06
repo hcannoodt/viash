@@ -17,10 +17,9 @@ jobs:
 
     steps:
     - name: Set up curl on macOS
+      if: runner.os == 'macOS'
       run: |
-        if [[ "${{ matrix.config.os }}" =~ ^macos.*$ ]]; then
-          brew install curl
-        fi
+        brew install curl
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
