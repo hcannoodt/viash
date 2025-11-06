@@ -22,6 +22,7 @@ jobs:
 
         # test connection
         curl -v https://github.com/viash-io/viash/releases/latest/download/viash_install
+        curl -v https://dl.viash.io
         
         # Download viash
         curl -fsSL https://github.com/viash-io/viash/releases/latest/download/viash_install | bash
