@@ -25,6 +25,9 @@ jobs:
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
+        # output curl version
+        curl -V
+
         # test connection
         curl -vSL https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
         curl -vSL https://dl.viash.io | wc
