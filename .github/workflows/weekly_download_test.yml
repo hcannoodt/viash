@@ -20,6 +20,7 @@ jobs:
       if: runner.os == 'macOS'
       run: |
         brew install curl
+        brew link --force curl
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
