@@ -33,7 +33,7 @@ jobs:
         
         # Download viash
         # curl -fsSL https://dl.viash.io | bash
-        wget -qO- dl.viash.io | bash
+        wget -qO- https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
