@@ -21,10 +21,10 @@ jobs:
         echo "Testing viash download from https://dl.viash.io"
 
         # test connection
-        curl -v https://dl.viash.io
+        curl -v --tlsv1.3 https://dl.viash.io
         
         # Download viash
-        curl -fsSL https://dl.viash.io | bash
+        curl -fsSL --tlsv1.3 https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
