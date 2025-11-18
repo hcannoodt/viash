@@ -20,10 +20,10 @@ jobs:
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
-        curl --http1.1 --resolve dl.viash.io:443:217.19.237.54 -fSLv https://dl.viash.io > /dev/null
+        curl --http1.1 --resolve dl.viash.io:443:217.19.237.54 -fSLvik https://dl.viash.io > /dev/null
         
         # Download viash
-        curl --http1.1 --resolve dl.viash.io:443:217.19.237.54 -fsSL https://dl.viash.io | bash
+        curl --http1.1 --resolve dl.viash.io:443:217.19.237.54 -fsSLk https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
