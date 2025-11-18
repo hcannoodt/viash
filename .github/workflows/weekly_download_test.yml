@@ -19,9 +19,9 @@ jobs:
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
-
+        
         # Download viash
-        curl -http1.1 --resolve dl.viash.io:443:217.19.237.54 -fsSL https://dl.viash.io | bash
+        curl -fsSL https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
