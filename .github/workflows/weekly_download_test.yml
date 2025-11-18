@@ -16,14 +16,19 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
+    - name: Set up curl on macOS
+      if: runner.os == 'macOS'
+      run: |
+        echo "Setting up curl-openssl on macOS"
+        brew upgrade
+        brew uninstall curl
+        brew install curl-openssl
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
-        curl --http2 --tlsv1.3 -Lvi1 https://dl.viash.io > /dev/null
-        
         # Download viash
-        curl -fsSL1 https://dl.viash.io | bash
+        curl -fsSL https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
