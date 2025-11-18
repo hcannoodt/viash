@@ -23,6 +23,7 @@ jobs:
         brew upgrade
         brew uninstall curl
         brew install curl-openssl
+        echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> /Users/runner/.bash_profile
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
