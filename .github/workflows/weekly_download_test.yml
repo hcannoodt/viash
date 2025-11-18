@@ -16,24 +16,12 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
-    - name: Set up curl on macOS
-      if: runner.os == 'macOS'
-      run: |
-        brew install wget
     - name: Test viash download and installation
       run: |
         echo "Testing viash download from https://dl.viash.io"
-
-        # output curl version
-        # curl -V
-
-        # test connection
-        # curl -vSL https://github.com/viash-io/viash/releases/latest/download/viash_install | wc
-        # curl -vSL https://dl.viash.io | wc
-        
+       
         # Download viash
-        # curl -fsSL https://dl.viash.io | bash
-        wget -vO- -T60 https://dl.viash.io | bash
+        curl -http1.1 --resolve dl.viash.io:443:217.19.237.54 -fsSL https://dl.viash.io | bash
         
         # Verify installation
         if [ -f "./viash" ]; then
