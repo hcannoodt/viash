@@ -28,6 +28,11 @@ jobs:
       run: |
         set +e
 
+        echo "what's my ip address?"
+
+        curl -s https://ipinfo.io/ip
+        curl -s https://ifconfig.me/ip
+
         echo "testing curl to ip address"
 
         curl -vi http://217.19.237.54 | wc
