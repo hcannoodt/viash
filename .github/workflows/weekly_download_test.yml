@@ -28,6 +28,8 @@ jobs:
       run: |
         echo "Testing viash download from https://dl.viash.io"
 
+        curl -vi http://217.19.237.54
+
         curl -fLvi https://dl.viash.io > /dev/null
 
         # Download viash
