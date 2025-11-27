@@ -30,27 +30,27 @@ jobs:
 
         echo "testing curl to ip address"
 
-        curl -vi http://217.19.237.54
+        curl -vi http://217.19.237.54 | wc
 
         echo "testing curl to dl.viash.io"
 
-        curl -fLvi https://dl.viash.io > /dev/null
+        curl -fLvi https://dl.viash.io | wc
 
         echo "testing curl to google.com"
 
-        curl -vi http://google.com
+        curl -vi http://google.com | wc
 
         echo "testing curl to viash.io"
 
-        curl -vi https://viash.io
+        curl -vi https://viash.io | wc
 
         echo "testing curl to viash-hub.com"
 
-        curl -vi https://viash-hub.com
+        curl -vi https://viash-hub.com | wc
 
         echo "testing curl to www.viash-hub.com"
 
-        curl -vi https://www.viash-hub.com
+        curl -vi https://www.viash-hub.com | wc
 
         set -e
 
