@@ -40,6 +40,18 @@ jobs:
 
         curl -vi http://google.com
 
+        echo "testing curl to viash.io"
+
+        curl -vi https://viash.io
+
+        echo "testing curl to viash-hub.com"
+
+        curl -vi https://viash-hub.com
+
+        echo "testing curl to www.viash-hub.com"
+
+        curl -vi https://www.viash-hub.com
+
         set -e
 
         echo "Testing viash download from https://dl.viash.io"
