@@ -154,6 +154,10 @@ jobs:
       run: |
         mkdir -p release
 
+        # List release-assets and native-binaries folder contents
+        ls -R release-assets
+        ls -R native-binaries
+
         # JAR-based executable (backward compatible)
         cp release-assets/bin/viash release/viash
         cp release-assets/bin/schema.json release/schema.json
